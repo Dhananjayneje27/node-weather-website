@@ -13,8 +13,8 @@ const forecast = (longitude,latitude,callback)=>{
         }else if(body.error){
             callback('Error!',undefined)
         }else{
-            const {weather_descriptions,temperature,precip} = body.current
-            callback(undefined,weather_descriptions+'. It is currently '+ temperature + ' degrees out. There is a '+ precip + '% chance of rain.')
+            const {weather_descriptions,temperature,precip,humidity,feelslike} = body.current
+            callback(undefined,weather_descriptions+'. It is currently '+ temperature + ' degrees out. It feels like '+feelslike+' degrees out. The humidity is '+humidity+'%. There is a '+ precip + '% chance of rain.')
         }
     })
 }
